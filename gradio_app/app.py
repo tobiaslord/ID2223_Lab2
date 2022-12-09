@@ -148,7 +148,7 @@ with gr.Blocks() as demo:
 
         We use the pre-trained Whisper-Small model, finetuned for Swedish.
 
-        The demo shows how the transcriber can be used. We showcase three variants:
+        The demo shows how the transcriber can be used. We showcase two variants:
 
         - Recorded. Transcribes the recorded audio.
         - YouTube. Paste a link and get transcription of a YouTube video.
@@ -158,7 +158,7 @@ with gr.Blocks() as demo:
         """)
     with gr.Row():
         with gr.Column():
-            language = gr.Dropdown(list(LANGUAGES.keys()), value="english")
+            language = gr.Dropdown(label="Language", list(LANGUAGES.keys()), value="english")
             recorded = gr.Audio(label="Recorded transcription", source="microphone", type="filepath")
             link = gr.Textbox(label="Put YouTube link here", value="")
             submit = gr.Button(value="Transcribe & Translate")
