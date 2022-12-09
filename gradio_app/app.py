@@ -161,7 +161,7 @@ with gr.Blocks() as demo:
             language = gr.Dropdown(list(LANGUAGES.keys()), value="english")
             recorded = gr.Audio(label="Recorded transcription", source="microphone", type="filepath")
             link = gr.Textbox(label="Put YouTube link here", value="")
-            submit = gr.Button(value="Translate")
+            submit = gr.Button(value="Transcribe & Translate")
         with gr.Column():
             chatbot = gr.Chatbot().style(color_map=("green", "gray"))
     submit.click(transcribe, inputs=[recorded, language, history, link], outputs=[chatbot, history])
