@@ -158,7 +158,7 @@ with gr.Blocks() as demo:
         """)
     with gr.Row():
         with gr.Column():
-            language = gr.Dropdown(label="Language", list(LANGUAGES.keys()), value="english")
+            language = gr.Dropdown(label="Language", choices=list(LANGUAGES.keys()), value="english")
             recorded = gr.Audio(label="Recorded transcription", source="microphone", type="filepath")
             link = gr.Textbox(label="Put YouTube link here", value="")
             submit = gr.Button(value="Transcribe & Translate")
